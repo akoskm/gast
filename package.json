@@ -2,6 +2,11 @@
   "name": "gast",
   "displayName": "GitHub Actions Snippet Toolbox - gast",
   "description": "Useful GitHub Actions snippets",
+  "author": "akoskm",
+  "repository": {
+    "type": "git",
+    "url": "GitHub Actions Snippets Toolbox"
+  },
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.85.0"
