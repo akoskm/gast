@@ -4,6 +4,7 @@
   "description": "Useful GitHub Actions snippets",
   "author": "akoskm",
   "publisher": "akoskm",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "GitHub Actions Snippets Toolbox"
