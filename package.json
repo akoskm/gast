@@ -9,7 +9,7 @@
     "type": "git",
     "url": "GitHub Actions Snippets Toolbox"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -22,7 +22,11 @@
     "commands": [
       {
         "command": "gast.dependabot",
-        "title": "gast - Set up Dependabot"
+        "title": "gast - Dependabot"
+      },
+      {
+        "command": "gast.build",
+        "title": "gast - Simple Build Workflow"
       }
     ]
   },

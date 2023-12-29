@@ -32,4 +32,22 @@ suite("Extension Test Suite", () => {
       assert.ok(fs.existsSync(dependabotPath));
     }
   });
+
+  test("gast.build command executes successfully", async () => {
+    // Execute the command
+    await vscode.commands.executeCommand("gast.build");
+
+    // Add assertions here based on what the build command is supposed to do
+    // For example, if it creates a build directory, you can check for its existence
+    const workspaceFolders = vscode.workspace.workspaceFolders;
+    if (workspaceFolders) {
+      const rootPath = workspaceFolders[0].uri.fsPath;
+      const githubFolderPath = path.join(rootPath, ".github");
+      assert.ok(fs.existsSync(githubFolderPath));
+
+      // Check if the auto-merge.yml and dependabot.yml files exist
+      const buildWorkflowPath = path.join(githubFolderPath, "build.yml");
+      assert.ok(fs.existsSync(buildWorkflowPath));
+    }
+  });
 });

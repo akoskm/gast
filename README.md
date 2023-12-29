@@ -15,6 +15,11 @@ Create useful GitHub Actions in your project with a single command.
 
 Users appreciate release notes as you update your extension.
 
+### 1.0.2
+
+- [x] add simple build workflow
+- [x] rename commands
+
 ### 1.0.1
 
 - [x] add extension icon
