@@ -20,9 +20,14 @@ export function activate(context: vscode.ExtensionContext) {
     if (workspaceFolders) {
       const rootPath = workspaceFolders[0].uri.fsPath;
       const githubFolderPath = path.join(rootPath, ".github");
+      const workflowsFolderPath = path.join(githubFolderPath, "workflows");
 
       if (!fs.existsSync(githubFolderPath)) {
         fs.mkdirSync(githubFolderPath);
+      }
+
+      if (!fs.existsSync(workflowsFolderPath)) {
+        fs.mkdirSync(workflowsFolderPath);
       }
 
       const autoMergePath = path.join(
@@ -42,12 +47,20 @@ export function activate(context: vscode.ExtensionContext) {
       const dependabotContent = fs.readFileSync(dependabotFolderPath, "utf8");
 
       const files = [
-        { name: "auto-merge.yml", content: autoMergeContent },
-        { name: "dependabot.yml", content: dependabotContent },
+        {
+          name: "auto-merge.yml",
+          content: autoMergeContent,
+          folder: workflowsFolderPath,
+        },
+        {
+          name: "dependabot.yml",
+          content: dependabotContent,
+          folder: githubFolderPath,
+        },
       ];
 
       files.forEach((file) => {
-        const filePath = path.join(githubFolderPath, file.name);
+        const filePath = path.join(file.folder, file.name);
 
         if (!fs.existsSync(filePath)) {
           fs.writeFileSync(filePath, file.content);
