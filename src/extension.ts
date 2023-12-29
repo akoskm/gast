@@ -34,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         const autoMergePath = path.join(
           context.extensionPath,
-          "src",
+          "templates",
           "dependabot",
           "auto-merge.yml",
         );
@@ -42,7 +42,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         const dependabotFolderPath = path.join(
           context.extensionPath,
-          "src",
+          "templates",
           "dependabot",
           "dependabot.yml",
         );
@@ -96,7 +96,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       const buildWorkflowPath = path.join(
         context.extensionPath,
-        "src",
+        "templates",
         "build",
         "build.yml",
       );

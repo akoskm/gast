@@ -13,6 +13,10 @@ Create useful GitHub Actions in your project with a single command.
 
 ## Release Notes
 
+### 1.0.3
+
+- [x] fix missing template files in package
+
 ### 1.0.2
 
 - [x] add simple build workflow
